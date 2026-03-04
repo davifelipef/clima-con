@@ -1,31 +1,75 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 3rem;
   background-color: #f2f2f2;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .container {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* mobile first: botão abaixo do input */
+  align-items: center;
+  gap: 1rem; /* espaçamento entre input e botão */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 input {
-  padding: 10px;
+  padding: 0.75rem 1rem;
   font-size: 16px;
-  width: 220px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 button {
-  padding: 10px 15px;
+  padding: 0.75rem 1.5rem;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: white;
+  transition: background-color 0.3s;
+  width: 100%; /* mobile: botão ocupa toda largura */
+  max-width: 180px; /* desktop: limite lateral */
 }
 
 button:hover {
-  background-color: #ddd;
+  background-color: #357ab8;
 }
 
 .result {
-  margin-top: 30px;
-  font-size: 20px;
+  margin-top: 2rem;
+  font-size: 18px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Media query apenas para desktop */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* input e botão lado a lado */
+    justify-content: center;
+  }
+
+  input {
+    width: 250px;
+  }
+
+  button {
+    width: auto; /* botão volta ao tamanho do conteúdo */
+  }
 }
